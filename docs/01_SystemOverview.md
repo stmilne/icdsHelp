@@ -40,7 +40,7 @@ you need a paid [allocation](04_Allocations.md).
 ## Roar uses Unix
 
 The operating system for Roar is Unix.
-Unix is text-based; users interact with the system by typing commands.  
+Unix is text-based; users interact with the system by typing commands.
 Compute clusters use Unix,
 in part because tasks can be automated with scripts.
 
@@ -59,7 +59,7 @@ Here are some to avoid:
 
 - _Don’t use submit nodes for heavy computing_.
 Submit nodes are for preparing files, submitting jobs, 
-examining results, transferring files, and so on
+examining results, transferring files, and so on.
 - _Don’t store files on scratch_.
 [Scratch is not backed up](10_FileStorage.md), 
 and files more than 30 days old are deleted.

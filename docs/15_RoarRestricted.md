@@ -1,6 +1,6 @@
 
 
-# Roar Restricted Addendum
+# Roar Restricted
 
 Roar Restricted (RR) is intended for working with restricted data.
 Group storage on RR is provided on an as-needed basis 
@@ -11,7 +11,7 @@ Most material in the User Guide
 applies to both Roar Collab (RC) and RR.
 This addendum addresses items unique to RR.
 
-## Accessing Roar Restricted
+## Accessing
 
 RR accounts are only granted to individuals that require access 
 to a restricted storage allocation. 
@@ -39,7 +39,7 @@ GlobalProtect software can be downloaded [here](https://www.it.psu.edu/software/
 Penn State IT provides configuration instructions [here][GPconfig].
 [GPconfig]: https://pennstate.service-now.com/sp?id=kb_article_view&sysparm_article=KB0013431&sys_kb_id=24f7cdd9dbd7e0d02c4f9e74f3961967&spa=1 
 
-## Handling Data 
+## Handling data 
 
 To limit the risk of data leaks
 and comply with restricted data storage standards,

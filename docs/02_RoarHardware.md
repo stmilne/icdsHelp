@@ -22,8 +22,8 @@ Nodes on Collab are of seven different types:
 - basic -- CPU nodes, without Infiniband, for jobs that fit on a single node.
 - standard -- CPU nodes, with Infiniband, for single-node or multinode jobs.
 - high-memory -- CPU nodes with extra memory, for memory-intensive jobs.
-- GPU -- standard nodes, with one powerful GPU.
-- GPU 2 -- older CPU nodes, with two or more older GPUs.
+- GPU -- standard nodes, with one or more powerful GPUs.
+- GPU 2 -- older CPU nodes, with one older GPU.
 - interactive -- nodes with graphics cards, that service the Portal.
 
 Each node type consists of different hardware, 

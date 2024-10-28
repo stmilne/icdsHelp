@@ -1,0 +1,18 @@
+site_name: Roar User Guide
+site_url: https://github.com/stmilne/stmilne.github.io.git
+repo_url: https://github.com/stmilne/stmilne.github.io.git
+
+theme: 
+  name: readthedocs
+  highlightjs: false
+  include_homepage_in_sidebar: false
+  logo: img/PSU_ICDS_logo_blue.png
+  site_favicon: img/favicon.ico
+
+extra_css: 
+    - css/extra.css
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences

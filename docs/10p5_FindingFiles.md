@@ -18,11 +18,12 @@ Like many Unix commands,
 and can be combined with other Unix commands 
 using pipes (`|`) and redirection (`>`) to perform complex tasks.
 
-Tutorials exist for [Unix](01_SystemOverview.md/#unix), 
+Tutorials exist for [Unix][unix_tutorial], 
 [grep][grep_tutorial], and [find][find_tutorial].
 Google searches on these commands are often helpful
 (e.g., "Unix how to find and delete large files").
 Here are a few examples of each.
+[unix_tutorial]: https://www.tutorialspoint.com/unix/unix_tutorial.pdf
 [grep_tutorial]: https://danielmiessler.com/p/grep/
 [find_tutorial]: https://snapshooter.com/learn/linux/find
 

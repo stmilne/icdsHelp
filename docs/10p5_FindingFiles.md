@@ -18,7 +18,7 @@ Like many Unix commands,
 and can be combined with other Unix commands 
 using pipes (`|`) and redirection (`>`) to perform complex tasks.
 
-Tutorials exist for [Unix][unix_tutorial], 
+Tutorials exist for [Unix](01_SystemOverview.md/#unix), 
 [grep][grep_tutorial], and [find][find_tutorial].
 Google searches on these commands are often helpful
 (e.g., "Unix how to find and delete large files").

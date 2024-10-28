@@ -1,6 +1,4 @@
 site_name: Roar User Guide
-site_url: https://github.com/stmilne/stmilne.github.io.git
-repo_url: https://github.com/stmilne/stmilne.github.io.git
 
 theme: 
   name: readthedocs

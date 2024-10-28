@@ -4,7 +4,7 @@ Roar consists of two clusters:  Roar Collab, and Roar Restricted.
 Roar Collab is for general use; 
 Roar Restricted is only for users working with sensitive data
 requiring extra security provisions.
-For details, see [Roar Restricted Addendum](15_RoarRestricted.md).
+For details, see the [Roar Restricted](15_RoarRestricted.md) addendum.
 
 ## Two ways to access 
 

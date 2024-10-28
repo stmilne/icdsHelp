@@ -37,7 +37,7 @@ and to batch jobs on vintage hardware.
 But to use any of the newer, more powerful hardware,
 you need a paid [allocation](04_Allocations.md).
 
-## [Roar uses Unix](#unix)
+## Roar uses Unix
 
 The operating system for Roar is Unix.
 Unix is text-based; users interact with the system by typing commands.

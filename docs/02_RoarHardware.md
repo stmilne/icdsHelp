@@ -14,9 +14,9 @@ where users login and submit compute jobs,
 and also to a central filesystem that stores files.
 
 
-## Collab
+## Collab[](#partitions)
 
-Nodes on Collab are of seven different types:
+Nodes on Collab are grouped into seven different *partitions*:
 
 - vintage -- older hardware, accessible at no cost via the open queue.
 - basic -- CPU nodes, without Infiniband, for jobs that fit on a single node.
@@ -41,7 +41,7 @@ appropriate to its purpose:
 
 ## Restricted
 
-Roar Restricted consists of two different node types:
+Roar Restricted consists of two different partitions:
 
 | Resource | Cores | Memory (GB) | CPU | GPU | Network | Count |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- |

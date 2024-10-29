@@ -24,9 +24,13 @@ and then for multi-factor authentication (MFA),
 which confirms that you are you.  To set up MFA, 
 go [here](https://accounts.psu.edu/2fa).
 
-## X windows apps
+**Note:  for security reasons, Roar Restricted can only be accessed
+via the [RR Portal](15_RoarRestricted.md/#Roar Restricted/).**
 
-To use any application that "opens a window" (called an "X11" application), 
+## X Window apps
+
+To use any application that "opens a window"
+(called an  "X Window" or "X11" application), 
 you need an additional program on your laptop.
 On the Mac, this is XQuartz, available [here](https://www.xquartz.org).
 On the PC, you need VcXsrv, available [here](https://sourceforge.net/projects/vcxsrv/).
@@ -36,13 +40,16 @@ option `-X` for "X forwarding":
 ```
 ssh -X <user>@submit.hpc.psu.edu
 ```
+When you logon to Collab from somewhere off campus,
+X Window apps can sometimes be slow;  
+Portal works better in such circumstances.
 
 ## User settings
 
 On Macs and PCs, user settings are accessed in application menus,
 System Settings panels, and the like.
 On Unix machines, settings are stored in text files, 
-nearly always hidden (named starting with `.`),
+typically hidden (named starting with `.`),
 somewhere in your home directory (`~` or `$HOME`).
 
 Settings files are hidden to keep users from meddling with them.

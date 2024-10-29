@@ -8,13 +8,14 @@ which runs the job when resources are available.
 On Roar, the queue manager is called SLURM 
 (Simple Linux Utility for Resource Management).  
 Besides `salloc` for interactive jobs (see [Interactive jobs](07_InteractiveJobs.md)),
-the basic SLURM commands are:
+here are the basic SLURM commands
+(with their equivalents under PBS, the previous queue system):
 
-| Command | Effect|
-| ---- | ---- |
-|`sbatch <script>` | submit `<script>` to SLURM |
-| `squeue -u <userid>` | check on jobs submitted by `<userid>` |
-| `scancel <jobID>` | cancel the job |
+| Command | Effect| PBS equivalent |
+| ---- | ---- | ---- |
+|`sbatch <script>` | submit batch job `<script>` | `qsub <script>` |
+| `squeue -u <userid>` | check on jobs submitted by `<userid>` | `qstat -u <userid>` |
+| `scancel <jobID>` | cancel the job | `qdel <jobID>` |
 
 ## Batch scripts
 
@@ -41,11 +42,9 @@ An example is:
 #SBATCH --time=4:00:00
 #SBATCH --job-name=<name>
 
-module load gromacs-2019.6
-
 cd $SLURM_SUBMIT_DIR
-SYSTEM=$SLURM_SUBMIT_DIR/System
 
+SYSTEM=$SLURM_SUBMIT_DIR/System
 gmx grompp -f $SYSTEM/nvt.mdp -c $SYSTEM/min.gro -p $SYSTEM/testJob.top -o nvt.tpr 
 gmx mdrun -nt 8 -nb cpu -deffnm nvt
 ```
@@ -58,46 +57,18 @@ The first line `#!/bin/bash` executes your `.bashrc` file,
 and thus performs any initializations it contains
 (e.g., loading modules).
 
+For more examples of common use cases,
+see [`#SBATCH` examples](08p5_PBStoSLURM.md).
+
 **The hardware you reserve by choosing a partition,
 specifying numbers of nodes and cores, or requesting a GPU,
 affects the cost of your job; see [Prices](04_Allocations.md/#prices).**
-
-
-## SLURM directives
-
-Most of the usual SLURM directives appear in the example above.
-Here is a table:
-
-| Directive | Default | Description |
-| ---- | ---- | ---- |
-| `-A` or `--account` | `open` | Allocation to charge |
-| `-q` or `--qos` | `open` | Queue to submit to |
-| `-p` or `--partition` | `vintage` | Partition (type of nodes) to use |
-| `-N` or `--nodes` | 1 | Number of nodes |
-| `-G` or `--gpus` | 0 | Number of GPUs |
-| `-n` or `--ntasks` | 1 | Number of tasks (cores) |
-| `--mem` | ? | Memory per node |
-| `-t` or `--time` | 1 hour | Maximum run time |
-| `-C` or `--constraint` | none | Required node features |
-| `-J` or `--job-name` | `jobID` | Job name |
-
-`#SBATCH` directives have *defaults*, listed above,
-so you don't need to specify everything.
-
-`#SBATCH` requests must be *consistent*, or the submission will fail.
-Don't ask for a GPU if you requested `partition=basic`;
-don't specify `account=open`, and then ask for anything but
-`partition=vintage`; and so on.
-
-For more information, see documentation on 
-[salloc](https://slurm.schedmd.com/salloc.html) 
-and [sbatch](https://slurm.schedmd.com/sbatch.html).
 
 ## Queues[](#queues)
 
 The directive `#SBATCH --qos=<queue>` submits batch jobs to a queue, 
 or QoS = "Quality of Service" in SLURM-speak.
-(Queues are a bit like classes of service on an airline flight:
+(Queues are like classes of service on an airline flight:
 first, business, economy,...)
 
 Collab has six queues:  open, regular, debug, express, and warp.  

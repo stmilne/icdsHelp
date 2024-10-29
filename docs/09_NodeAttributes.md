@@ -18,6 +18,8 @@ will display information about the CPU and its capabilities.
 Likewise, if you are logged onto a GPU node, the command `nvidia-smi`
 will display information about the GPU and its capabilities.
 
+## `sinfo`
+
 From any node including submit nodes,
 the SLURM command `sinfo` displays information about *all* Collab nodes.
 `sinfo` output is more easily read with some formatting options,
@@ -28,7 +30,20 @@ which generates a table like this:
 
 ![sinfo table](img/sinfo_table.png)
 
-To request nodes with a given feature, add a line to your batch script:
+Evidently, node attributes serve many functions, 
+serving to identify nodes with a given
+
+- CPU type (broadwell, haswell, ...)
+- GPU type (a100, g100)
+- partition (bc, sc, hc, gc, ic,...)
+- or more specific hardware combination (p100_256, 3gc20gb, ...)
+
+## Constraints
+
+Mostly, you will *not* need to use constraints;
+partitions are "uniform enough" to specify hardware for most batch jobs.
+If you do need  request nodes with a given feature,
+add a line to your batch script:
 ```
 #SBATCH --constraint=<feature>
 ```

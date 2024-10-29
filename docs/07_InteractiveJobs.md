@@ -11,16 +11,15 @@ Instead, start an "interactive batch" session,
 requested from a submit node like this:
 
 ```
-salloc -N 1 -n 4 -A <alloc> -G 1 -t 1:00:00
+salloc -N 1 -n 4 -A <alloc> -t 1:00:00
 ```
 
-In the above example,
+In the above example, option `-N` requests the number of nodes,
+`-n` the number of cores per node, and `-t` the total time;
+`-A <alloc>` specifies your allocation 
+(`-A open` for the open queue).
 
-- `N` = number of nodes
-- `n` = cores per node
-- `A` = account (`<alloc>` is an allocation, or "open")
-- `G` = number of GPUs (omit if not needed)
-- `t` = time requested
-
-Once the `salloc` starts, you have the requested resources,
-and can run compute-intensive jobs interactively.
+Once the `salloc` starts, you can run compute-intensive jobs 
+interactively on the resources you requested.
+Typically, `salloc` jobs are short-duration (because interactive)
+and single-node (so a basic node is fine).

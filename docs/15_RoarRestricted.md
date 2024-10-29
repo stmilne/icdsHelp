@@ -4,7 +4,7 @@
 
 Roar Restricted (RR) is intended for working with restricted data.
 Group storage on RR is provided on an as-needed basis 
-to principal investigators (PIs) who works with restricted data,
+to principal investigators (PIs) who work with restricted data,
 and must comply with more stringent data storage standards.
 
 Most material in the User Guide 
@@ -12,11 +12,6 @@ applies to both Roar Collab (RC) and RR.
 This addendum addresses items unique to RR.
 
 ## Accessing
-
-RR accounts are only granted to individuals that require access 
-to a restricted storage allocation. 
-RR does not offer an open queue;
-users must submit jobs with a paid allocation.
 
 To request an account on RR, a user must complete the 
 [Account Request](https://accounts.aci.ics.psu.edu) form, 
@@ -32,7 +27,10 @@ to maintain compliance with the Authority to Operate (ATO).
 
 ## Connecting
 
-Users can connect to RR only via the RR Portal (https:/rrportal.hpc.psu.edu).
+RR does not offer an open queue;
+users must have a paid allocation.
+
+Users can connect to RR only via the RR Portal (<https://rrportal.hpc.psu.edu>).
 The RR Portal can only be accessed from the Penn State network 
 or the Penn State GlobalProtect VPN. 
 GlobalProtect software can be downloaded [here](https://www.it.psu.edu/software/);
@@ -51,7 +49,7 @@ to which access is limited.
 RR users can move data between their group storage 
 and the group's staging area on the data manager node;
 but only approved data administrators can move data
-between the group's staging area and the outside world
+between the staging area and the outside world
 (see diagrams below).
 
 ![Roar Restricted Outbound Transfer Workflow Diagram](img/RROutboundTransfer.png)

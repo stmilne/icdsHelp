@@ -59,7 +59,7 @@ This can be done in one of three ways:
 - load your environment with `source activate <environmentName>`;
 - begin your script with `#!/bin/bash`, which also executes your `.bashrc` file.
 
-## conda environments on Portal
+## conda on Portal
 
 Special considerations apply if you want to use conda environments you have defined,
 for Python or R for example,

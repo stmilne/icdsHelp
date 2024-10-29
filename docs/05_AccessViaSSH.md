@@ -46,7 +46,7 @@ nearly always hidden (named starting with `.`),
 somewhere in your home directory (`~` or `$HOME`).
 
 Settings files are hidden to keep users from meddling with them.
-But one important settings files that you should know about is `~/.bashrc`.
+But one important settings file that you should know about is `~/.bashrc`.
 
 When you log in, commands in `.bashrc` are automatically executed.
 Lines may be added to `.bashrc` to define frequently used aliases, 

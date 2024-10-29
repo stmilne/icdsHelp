@@ -20,7 +20,7 @@ Snapshots are not saved beyond xxx days.
 If you mistakenly delete a file, you can request it to be restored from a snapshot.
 Try to avoid this.
 
-## [Quotas](#quotas)
+## Quotas[](#quotas)
 
 home, work, group, and scratch directories are subject to limits,
 of the total filespace and the total number of files.

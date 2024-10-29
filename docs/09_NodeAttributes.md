@@ -33,9 +33,10 @@ To request nodes with a given feature, add a line to your batch script:
 #SBATCH --constraint=<feature>
 ```
 where <feature> is one of the features listed by `sinfo`
-(or multiple features, separated by commas)
+(or multiple features, separated by commas).
 
 Likewise, to request nodes with a given feature for an interactive job,
 add a `-C` option to your `salloc` command:
 ```
 salloc -N 1 -n 4 -A <alloc> -C <feature> -t 1:00:00
+```

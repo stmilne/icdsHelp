@@ -25,7 +25,7 @@ which confirms that you are you.  To set up MFA,
 go [here](https://accounts.psu.edu/2fa).
 
 **Note:  for security reasons, Roar Restricted can only be accessed
-via the [RR Portal](15_RoarRestricted.md/#Roar Restricted/).**
+via the [RR Portal](15_RoarRestricted.md).**
 
 ## X Window apps
 

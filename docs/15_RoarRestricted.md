@@ -11,6 +11,16 @@ Most material in the User Guide
 applies to both Roar Collab (RC) and RR.
 This addendum addresses items unique to RR.
 
+## Compute hardware
+
+Roar Restricted consists of two different partitions:
+
+| Resource | Cores | Memory (GB) | CPU | GPU | Network | Count |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Standard | 48 <br> 24 | 384 <br> 256 | Gold 6248R <br> E5-2680v3 | | Infiniband | 12 <br> 48 |
+| GPU | 28 | 256 | E5-2680v4 | quad P100 | Infiniband | 3 |
+
+
 ## Accessing
 
 To request an account on RR, a user must complete the 

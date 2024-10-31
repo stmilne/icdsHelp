@@ -1,4 +1,4 @@
-# `#SBATCH` examples
+# Batch examples
 
 Here we present examples of `#SBATCH` directives
 for common use cases.  

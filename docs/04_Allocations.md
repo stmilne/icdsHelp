@@ -1,11 +1,11 @@
-# Allocations
+# Charge accounts
 
 To submit batch jobs on any but [vintage](02_RoarHardware.md) hardware, 
-a paid allocation is required.
-Faculty can set up allocations, for one or more groups or projects,
+a paid charge account is required.
+Faculty can set up charge accounts, for one or more groups or projects,
 with a list of approved users, funded by a given source.
 
-Allocations are "pay as you go":
+Charge accounts are "pay as you go":
 the account is charged only when compute jobs run.
 Jobs are priced in "compute units" (CUs). 
 One CU equals one core-month on a basic node.
@@ -18,6 +18,7 @@ so that you can use whatever hardware is needed for a given job.
 The prices of different nodes (basic, standard, hi-memory, GPU)
 are proportional to the capital cost of the hardware,
 and competitive with the cost of buying your own cluster.
+2025 prices for PSU users are:
 
 | resource | price | ratio | 5-year node cost |
 | ---- | ---- | ---- | ---- |

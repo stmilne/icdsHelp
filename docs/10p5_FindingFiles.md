@@ -1,9 +1,18 @@
-# Finding files
+# Managing files
+
+(((FIX THIS)))
+
+Thunar graphical file manager 
+(available via the RHEL8 Interactive Desktop and over SSH with X11 forwarding)
+
+## Finding files
 
 On Macs and PCs, powerful tools exist for finding files
 that match certain criteria, or contain certain text.
 Two Unix commands that provide similar capabilities 
-are `find` and `grep`.
+are [`find`][find] and [`grep`][grep].
+[find]: https://man7.org/linux/man-pages/man1/find.1.html
+[grep]: https://man7.org/linux/man-pages/man1/grep.1.html
 
 `find` looks for files based on their attributes (name, type, size, date),
 searches recursively (through all subdirectories of a given directory),
@@ -27,7 +36,7 @@ Here are a few examples of each.
 [grep_tutorial]: https://danielmiessler.com/p/grep/
 [find_tutorial]: https://snapshooter.com/learn/linux/find
 
-## find
+### find
 
 Find all files with name that matches a pattern:
 ```
@@ -68,7 +77,7 @@ Find files of a certain extension and delete them:
 find . -name "*.trr" -exec rm -f {} +
 ```
 
-## grep
+### grep
 
 In its simplest form, `grep` searches for a "pattern"
 in a given file or set of files:

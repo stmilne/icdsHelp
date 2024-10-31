@@ -3,7 +3,7 @@
 Here we present examples of `#SBATCH` directives
 for common use cases.  
 (Information about queues is [here](08_BatchJobs.md/#queues),
-and about hardware partitions is [here](02_RoarHardware.md/#partitions).)
+and about hardware partitions is [here](03_ComputeHardware.md/#partitions).)
 
 ## Open queue
 

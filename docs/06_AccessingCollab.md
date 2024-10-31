@@ -27,7 +27,7 @@ which confirms that you are you.  To set up MFA,
 go [here](https://accounts.psu.edu/2fa).
 
 **Note:  for security reasons, Roar Restricted can only be accessed
-via the [RR Portal](15_RoarRestricted.md).**
+via the [RR Portal](16_RoarRestricted.md).**
 
 ## X Window apps
 
@@ -64,5 +64,5 @@ Option `-N` requests the number of nodes,
 `-A <alloc>` specifies your allocation 
 (`-A open` for the open queue).
 
-Once `salloc` starts, you can run compute-intensive jobs 
+Once salloc starts, you can run compute-intensive jobs 
 interactively on the resources you requested.

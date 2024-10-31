@@ -11,7 +11,7 @@ Roar consists of two clusters:  **Roar Collab**, and **Roar Restricted**.
 Roar Collab is for general use;   
 Roar Restricted is only for users working with sensitive data
 requiring extra security provisions.  
-For details, see the [Roar Restricted](15_RoarRestricted.md) addendum.
+For details, see the [Roar Restricted](16_RoarRestricted.md) addendum.
 
 ## Architecture
 
@@ -29,12 +29,12 @@ connected together by networks:
 
 ## Accounts
 
-To log on to Collab, you need a [user account](03_Accounts.md).
+To log on to Collab, you need a [login account](04_LoginAccounts.md).
 To work on Collab, you can use the open queue at no cost,
 which gives you access to the Portal, 
 and to batch jobs on vintage hardware.
 But to use any of the newer, more powerful hardware,
-you need a paid [charge account](04_Allocations.md).
+you need a paid [charge account](05_ChargeAccounts.md).
 
 ## Two ways to access 
 
@@ -65,7 +65,7 @@ needed to prepare and submit jobs.
 Collab can also be accessed via SSH (Secure SHell),
 from a terminal application on a laptop.
 For more information about Portal and SSH access,
-see [Accessing Collab](05_AccessViaSSH.md).
+see [Accessing Collab](06_AccessingCollab.md).
 
 
 ## Roar uses Unix

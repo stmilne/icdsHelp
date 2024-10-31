@@ -46,7 +46,7 @@ Then, **read the README files**, and see what you are up against.
 
 Many source packages are built using [`cmake`][cmake],
 a Unix tool for controlling the compile and load process.
-To use `cmake`, first load its module:
+To use cmake, first load its module:
 [cmake]: https://cmake.org/cmake/help/latest/manual/cmake.1.html
 ```
 module load cmake
@@ -61,7 +61,7 @@ cmake <options>
 make
 make install
 ```
-Here `<options>` is a list of options for `cmake`,
+Here `<options>` is a list of options for cmake,
 that may control what version of the software to build,
 what assumptions to make about the CPU,
 what packages to include,
@@ -146,7 +146,7 @@ prepend_path('CPATH', pathJoin(base,'include'))
 prepend_path('PKG_CONFIG_PATH', pathJoin(base,'lib64/pkgconfig'))
 ```
 
-To tell `module` where to find your custom modules,
+To tell the system where to find your custom modules,
 add this line to your `.bashrc` file:
 ```
 module use <module_directory>

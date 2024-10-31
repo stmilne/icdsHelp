@@ -7,7 +7,8 @@ which runs the job when resources are available.
 
 On Roar, the queue manager is called SLURM 
 (Simple Linux Utility for Resource Management).  
-Besides `salloc` for interactive jobs (see [Interactive jobs](07_InteractiveJobs.md)),
+Besides `salloc` for interactive jobs
+(see [Interactive jobs](06_AccessingCollab.md#interactive-jobs)),
 here are the basic SLURM commands
 (with their equivalents under PBS, the previous queue system):
 
@@ -63,13 +64,13 @@ and thus performs any initializations it contains
 (most importantly, loading modules).
 
 For more examples of common use cases,
-see [`#SBATCH` examples](08p5_PBStoSLURM.md).
+see [Batch examples](09_BatchExamples.md).
 
 **The hardware you reserve by choosing a partition,
 specifying numbers of nodes and cores, or requesting a GPU,
-affects the cost of your job; see [Prices](04_Allocations.md/#prices).**
+affects the cost of your job; see [Prices](05_ChargeAccounts.md/#prices).**
 
-## Queues[](#queues)
+## Queues
 
 The directive `#SBATCH --qos=<queue>` submits batch jobs to a queue, 
 or QoS = "Quality of Service" in SLURM-speak.

@@ -23,14 +23,14 @@ a popular choice is [Visual Studio Code Server][vscode]
 [vscode]: https://code.visualstudio.com/docs/remote/vscode-server
 
 Finally, `vi` is beloved by old-school users.
-In `vi`, you navigate the file not with cursor and mouse, but by key commands.
-`vi` offers powerful search-and-replace functions,
+In vi, you navigate the file not with cursor and mouse, but by key commands.
+vi offers powerful search-and-replace functions,
 and rapid navigation within the file.
-Learning `vi` is like touch-typing -- 
+Learning vi is like touch-typing -- 
 difficult at first, but remarkably fast.  
 
-Tutorials for `vi` are available [here][vi1], [here][vi2], and [here][vi3].
-Once you know `vi`, [this summary][vi_summary] is useful.
+Tutorials for vi are available [here][vi1], [here][vi2], and [here][vi3].
+Once you know vi, [this summary][vi_summary] is useful.
 [vi1]: https://www.cs.colostate.edu/helpdocs/vi.html 
 [vi2]: http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Editors/ViIntro.html
 [vi3]: http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html.  

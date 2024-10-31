@@ -1,6 +1,6 @@
 # Charge accounts
 
-To submit batch jobs on any but [vintage](02_RoarHardware.md) hardware, 
+To submit batch jobs on any but [vintage](03_ComputeHardware.md) hardware, 
 a paid charge account is required.
 Faculty can set up charge accounts, for one or more groups or projects,
 with a list of approved users, funded by a given source.
@@ -13,7 +13,7 @@ One CU equals one core-month on a basic node.
 CUs from an allocation can be spent on any type of node,
 so that you can use whatever hardware is needed for a given job.
 
-## Prices[](#prices)
+## Prices
 
 The prices of different nodes (basic, standard, hi-memory, GPU)
 are proportional to the capital cost of the hardware,

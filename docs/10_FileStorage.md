@@ -20,7 +20,7 @@ Snapshots are not saved beyond xxx days.
 If you mistakenly delete a file, you can request it to be restored from a snapshot.
 Try to avoid this.
 
-## Quotas[](#quotas)
+## Quotas
 
 home, work, group, and scratch directories are subject to limits,
 of the total filespace and the total number of files.
@@ -57,7 +57,7 @@ In managing storage, we often want to know where the big files are.
 du -sh * | sort -h -r
 ``
 lists directory sizes in order from large to small
-(the output of `du` is "piped" to [`sort`][sort]).
+(the output of du is "piped" to [sort][sort]).
 [sort]: https://man7.org/linux/man-pages/man1/sort.1.html
 
 ## File permissions
@@ -79,7 +79,7 @@ To change them, use [`chmod`][chmod]:
 ```
 chmod g+r <filespec>
 ```
-More generally, `chmod` can be used to add or remove (+ or -) 
+More generally, chmod can be used to add or remove (+ or -) 
 permissions to read (r), write (w), or execute (x),
 for the user (u), group (g), or others (o).
 

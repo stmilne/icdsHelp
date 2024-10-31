@@ -14,7 +14,7 @@ where users login and submit compute jobs,
 and also to a central filesystem that stores files.
 
 
-## Collab nodes[](#partitions)
+## Partitions
 
 Nodes on Collab are grouped into seven different *partitions*:
 
@@ -39,7 +39,7 @@ appropriate to its purpose:
 | GPU2 | 28 <br> 28 | 256 <br> 512 | E5-2680v4 <br> E5-2680v4 | P100 <br> P100 | Infiniband | 76 <br> 8 |
 | Interactive | 36 | 512 | Gold 6354 | A40 | ethernet | 12 |
 
-For Roar Restricted hardware, see [Roar Restricted](15_RoarRestricted.md).
+For Roar Restricted hardware, see [Roar Restricted](16_RoarRestricted.md).
 
 ## Node attributes
 
@@ -55,10 +55,10 @@ displays information about the CPU and its capabilities;
 `nvidia-smi` displays information 
 about the GPU (if present).
 
-## `sinfo`
+## sinfo
 
 The SLURM command `sinfo` displays information about *all* Collab nodes.
-`sinfo` output is more easily read with some formatting options,
+Its output is more easily read with some formatting options,
 ```
 sinfo --Format=features:30,nodelist:20,cpus:5,memory:10,gres:30
 ```
@@ -83,7 +83,7 @@ add a line to your batch script:
 ```
 #SBATCH --constraint=<feature>
 ```
-where <feature> is one of the features listed by `sinfo`
+where <feature> is one of the features listed by sinfo
 (or multiple features, separated by commas).
 
 To request nodes with a given feature for an interactive job,  

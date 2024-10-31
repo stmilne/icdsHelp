@@ -17,13 +17,13 @@ To find out if an application is available, use `which`:
 ```
 which <appName>
 ```
-`which` returns the path to the executable `<appName>`,
+which returns the path to the executable `<appName>`,
 if it exists on your `$PATH`.
-(The `$PATH` variable contains the set of directories
+(The $PATH variable contains the set of directories
 where Unix looks for executables;
-defaults for `$PATH` are initialized at logon.)
+defaults for $PATH are initialized at logon.)
 
-If `which` doesn’t find the app you are looking for,
+If which doesn’t find the app you are looking for,
 it may need to be loaded via the `module` system.
 Here are the various commands to search for,
 get info on, list, load, and unload modules:
@@ -59,13 +59,13 @@ in your home directory.
 Settings files are hidden to keep users from meddling with them.
 But one such file that you may want to alter is `~/.bashrc`.
 
-When you log in, commands in `.bashrc` are automatically executed.
-So lines may be added to `.bashrc` to load modules
+When you log in, commands in .bashrc are automatically executed.
+So lines may be added to .bashrc to load modules
 for software you use frequently.
 
 !!! tip "" 
-     If your `.bashrc` file contains `module load` commands,
+     If your .bashrc file contains `module load` commands,
      and your batch script begins with `#!/bin/bash`,
-     then your `.bashrc` file will execute when the batch job starts,
+     then your .bashrc file will execute when the batch job starts,
      and the job will have access to the loaded modules.
 

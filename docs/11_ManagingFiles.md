@@ -1,11 +1,37 @@
 # Managing files
 
-(((FIX THIS)))
+Common tasks on any filesystem include 
+navigating to a directory; listing the files; 
+creating folders;
+and copying, moving, renaming, and deleting files and folders.
+In classic Unix, these tasks are all performed 
+with command line tools: 
 
-Thunar graphical file manager 
-(available via the RHEL8 Interactive Desktop and over SSH with X11 forwarding)
+- `cd` (change directory)
+- `ls` (list files) 
+- `mkdir` (make directory)
+- `rmdir` (remove directory)
+- `cp` (copy)
+-  `mv` (move)
+-  `rm` (remove)
 
-## Finding files
+Part of learning [Unix](01_SystemOverview.md#roar-uses-unix)
+is becoming facile with these commands.
+But if you prefer a more "graphical" user interface,
+two options exist.
+
+The [Thunar][thunar] graphical file manager is available
+From the Portal Interactive Destop
+( menu item Applications/Accessories/Thunar File Manager)
+or an SSH -X terminal session (`thunar` at the command line).
+[thunar]: https://docs.xfce.org/xfce/thunar/start
+
+Alternatively, the Collab [Portal][portal] top menu under Files/Home
+opens a window that enables file management
+(moving, copying, renaming, making and deleting folders).
+[portal]: https://rcportal.hpc.psu.edu/pun/sys/dashboard
+
+# Finding files
 
 On Macs and PCs, powerful tools exist for finding files
 that match certain criteria, or contain certain text.
@@ -14,16 +40,16 @@ are [`find`][find] and [`grep`][grep].
 [find]: https://man7.org/linux/man-pages/man1/find.1.html
 [grep]: https://man7.org/linux/man-pages/man1/grep.1.html
 
-`find` looks for files based on their attributes (name, type, size, date),
+`find` looks for files based on their *attributes* (name, type, size, date),
 searches recursively (through all subdirectories of a given directory),
 and returns a list of file names.
 
-`grep` looks for files based on their contents,
+`grep` looks for files based on their *contents*,
 searching locally by default (but can be made to search recursively),
 and returns a list of lines that contain the searched-for pattern.
 
 Like many Unix commands, 
-`find` and `grep` have many option that expand their capabilities,
+find and grep have many option that expand their capabilities,
 and can be combined with other Unix commands 
 using pipes (`|`) and redirection (`>`) to perform complex tasks.
 
@@ -79,26 +105,26 @@ find . -name "*.trr" -exec rm -f {} +
 
 ### grep
 
-In its simplest form, `grep` searches for a "pattern"
+In its simplest form, grep searches for a "pattern"
 in a given file or set of files:
 ```
 grep <pattern> <file>
 ```
 
-In this form, `grep` finds all lines in `<file>` that contain `<pattern>`.
+In this form, grep finds all lines in `<file>` that contain `<pattern>`.
 The pattern can have "wildcards" -- `*` matches anything, for example.
 
 `<file>` can be a single filename, or itself a pattern
 that matches multiple files; for example, `*.log` matches all logfiles.
 
-`grep` is often useful to "filter" the output of commands.
+grep is often useful to "filter" the output of commands.
 `ps -e` lists all running processes (a very long list).
 To look for any process that mentions `vmd`:
 ```
 ps -e | grep vmd
 ```
 `grep -R` searches recursively through subdirectories.
-Here, `grep` searches the current directory `.` and its subdirectories,
+Here, grep searches the current directory `.` and its subdirectories,
 including all files `*.sh`, looking for pattern `sed`, 
 and writes the results to `sedExamples`: 
 ```

@@ -44,6 +44,8 @@ An example is:
 
 cd $SLURM_SUBMIT_DIR
 
+module load gromacs-2019.6
+
 SYSTEM=$SLURM_SUBMIT_DIR/System
 gmx grompp -f $SYSTEM/nvt.mdp -c $SYSTEM/min.gro -p $SYSTEM/testJob.top -o nvt.tpr 
 gmx mdrun -nt 8 -nb cpu -deffnm nvt
@@ -53,9 +55,12 @@ Everything after the last `#SBATCH` are commands to be executed.
 Most scripts start with `cd $SLURM_SUBMIT_DIR`,
 which is the directory from which the job was submitted.
 
+Use `module load` just as you would interactively
+to load any modules the batch script needs.
+
 The first line `#!/bin/bash` executes your `.bashrc` file,
 and thus performs any initializations it contains
-(e.g., loading modules).
+(most importantly, loading modules).
 
 For more examples of common use cases,
 see [`#SBATCH` examples](08p5_PBStoSLURM.md).
@@ -103,7 +108,7 @@ writes both standard output and error to `<username>_<jobname>.out`.
 ## Timing jobs[](#timing-jobs)
 
 It is good practice to test a new workflow
-by running small or short jobs before submitting big or long jobs.
+by running small short jobs before submitting big long jobs.
 To help plan your compute usage, 
 it is helpful to time such test jobs.
 
@@ -112,7 +117,8 @@ at the end of the log files they generate.
 If this is not the case for your application,
 you can find out how long a batch job takes
 by sandwiching the commands you execute
-between `date` commands:
+between [`date`][date] commands:
+[date]: https://man7.org/linux/man-pages/man1/date.1.html
 ```
 date
 <commands>
@@ -120,3 +126,10 @@ date
 ```
 Your batch standard output file will then contain two "timestamps",
 from which you can determine the running time.
+
+To time a single command in a batch file, use [`time`][time]:
+[time]: https://www.man7.org/linux/man-pages/man1/time.1.html
+```
+time <command>
+```
+which will write timing information to standard output.

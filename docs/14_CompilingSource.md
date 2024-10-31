@@ -1,4 +1,4 @@
-# Compiling source
+# Installing from source
 
 Collab offers a broad range of installed open-source applications,
 but sometimes you need an application Collab doesn’t have.
@@ -13,24 +13,41 @@ this can be relatively straightforward, or a total nightmare.
 
 The nightmare scenarios involve poor documentation,
 combined with the need for other packages also not installed on Collab,
-which in turn need other packages, and so on.  So beware...
+which in turn need other packages, and so on.
+
+## No root access
+
+If you have worked with a laptop running Linux,
+one important difference between installing software 
+on your laptop and on Collab is **no root access**.
+This means you cannot:
+
+- use RPM package installers like [`yum`][yum]
+- install executables in the standard places
+[yum]: https://man7.org/linux/man-pages/man8/yum.8.html
 
 ## wget
 
 The first step is to get the source package (typically a tarball of some sort)
 from the developer website onto Collab.
-The easiest way to do this is with `wget`,
-a command line tool for downloading such packages from the web.
+If you are logged on with Interactive Desktop or an SSH -X session, 
+you can launch Firefox and download software using the browser.
+
+Alternatively, you can use [`wget`][wget],
+to download source packages from the web:
+[wget]: https://linux.die.net/man/1/wget
 ```
 wget <webAddress>
 ```
 where `<webAddress>` can be copied from a browser link pointing to the file.
+Then, **read the README files**, and see what you are up against.
 
 ## cmake
 
-Many if not most source packages are built using `cmake`,
+Many source packages are built using [`cmake`][cmake],
 a Unix tool for controlling the compile and load process.
 To use `cmake`, first load its module:
+[cmake]: https://cmake.org/cmake/help/latest/manual/cmake.1.html
 ```
 module load cmake
 ```

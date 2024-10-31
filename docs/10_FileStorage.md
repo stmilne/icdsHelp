@@ -6,13 +6,13 @@ Collab and Restricted filesystems are separate.
 Users have access to four directories:  home, work, group, and scratch.
 These have different purposes:
 
-- home is for configuration files, and links to work, group, and scratch.
-- work is for your own work; 
+- **home** – for configuration files, and links to work, group, and scratch.
+- **work** – for your own work; 
 only you have read-write access to your home and work directories.
-- group is for collaborative work.  group space is owned by a PI;
+- **group** – for collaborative work.  group space is owned by a PI;
 by default, group members have read access to all files in group.
 Space in group is not free, and is sold in 5 TB increments.
-- scratch is for temporary storage of large files.  scratch is *not backed up*, 
+- **scratch**  – for temporary storage of large files.  scratch is *not backed up*, 
 and files older than 30 days are *automatically deleted*.
 
 Files in home, work, and group are backed up by a sequence of daily "snapshots". 
@@ -46,7 +46,8 @@ To avoid this, keep an eye on your file sizes and total usage.
 There are two tools to check on your disk usage:
 
 - `check_storage_quotas` reports your total usage;
-- `du` reports the sizes of files and directories.
+- [`du`][du] reports the sizes of files and directories.
+[du]: https://man7.org/linux/man-pages/man1/du.1.html
 
 `du -sh *` gives "human-readable" sizes (in MB, GB, TB) 
 for each item in the current directory.
@@ -56,7 +57,8 @@ In managing storage, we often want to know where the big files are.
 du -sh * | sort -h -r
 ``
 lists directory sizes in order from large to small
-(the output of `du` is "piped" to `sort`).
+(the output of `du` is "piped" to [`sort`][sort]).
+[sort]: https://man7.org/linux/man-pages/man1/sort.1.html
 
 ## File permissions
 
@@ -72,7 +74,8 @@ every file and folder created within group
 will by default have the same group read `r` permission.
 However, files created elsewhere and moved into group 
 have the permissions they were created with.
-To change them, use `chmod`:
+To change them, use [`chmod`][chmod]:
+[chmod]: https://man7.org/linux/man-pages/man1/chmod.1p.html
 ```
 chmod g+r <filespec>
 ```

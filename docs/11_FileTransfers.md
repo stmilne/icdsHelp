@@ -1,4 +1,4 @@
-# File transfers
+# Transferring files
 
 Computational workflows often require files 
 on Roar Collab, OneDrive, or your laptop or desktop machine
@@ -20,27 +20,15 @@ and list approximate transfer rates for large files.
 | Collab <-> laptop |sftp | 15 |
 | OneDrive <-> laptop | web access |20 |
 
-## Globus
+## Portal
 
-Globus is a web-based tool for file transfers,
-which can move files from Roar Collab
-to filesystems at institutions outside Penn State,
-including our OneDrive accounts.
-To get started, go [here][globus].
-[globus]: https://docs.globus.org/how-to/get-started/
-
-Globus moves files between named "endpoints".
-The endpoint for Collab is "PennState_ICDS_RC",
-and for Penn State OneDrive is "Penn State OACIOR OneDrive Collection 01".
-
-Globus is interactive, 
-but has the advantage that time-consuming file transfers 
-can be submitted as batch jobs, to be performed later.
+((describe it here))
 
 ## sftp
 
-`sftp` (secure file transfer protocol) is a Unix tool
+[`sftp`][sftp] (secure file transfer protocol) is a Unix tool
 for file transfers.  To launch`sftp`,
+[sftp]: https://man7.org/linux/man-pages/man1/sftp.1.html
 ```
 sftp <username>@<address>
 ```
@@ -74,6 +62,32 @@ you can navigate on the remote machine in `sftp` with `cd`
 and list files with `ls`. 
 Likewise, within `sftp` you can navigate on the local machine
 with "local" versions of these commands, `lcd` and `lls`.
+
+## Laptop `sftp` clients
+
+[Cyberduck][cyberduck]
+[FileZilla][filezilla]
+[cyberduck]:https://cyberduck.io
+[filezilla]:https://filezilla-project.org
+
+## Globus
+
+Globus is a web-based tool for file transfers,
+which can move files from Roar Collab
+to filesystems at institutions outside Penn State,
+including our OneDrive accounts.
+To get started, go [here][globus].
+[globus]: https://docs.globus.org/how-to/get-started/
+
+Globus moves files between named "endpoints".
+The endpoint for Collab is "PennState_ICDS_RC",
+and for Penn State OneDrive is "Penn State OACIOR OneDrive Collection 01".
+
+Globus is interactive, 
+but has the advantage that time-consuming file transfers 
+can be submitted as batch jobs, to be performed later.
+
+
 
 ## Packing files
 

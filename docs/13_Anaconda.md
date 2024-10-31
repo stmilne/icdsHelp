@@ -1,4 +1,31 @@
-# Anaconda
+# Loading packages
+
+
+## Python 
+
+Python is a widely-used programming language,
+preloaded on Collab,
+which is greatly extensible in its capabilities
+by loading additional packages.
+
+To load Python packages, use pip:
+```
+pip install --user <package>
+```
+Python packages are loaded by default into `$HOME/.local`.
+If you load a large number of big Python packages,
+you may exceed the limited storage space in your home directory.
+
+If this becomes a problem, the `.local` directory can be moved to `~/work`,
+and a link placed in your home directory.
+To make such a link, in your home directory execute the command
+```
+ln -s .local work/.local
+```
+which creates an alias (in Unix-speak, a "soft link") named `.local`
+that points to the directory you moved to `work`.
+
+## Anaconda
 
 Anaconda is a "package manager",
 originally developed for Python, 
@@ -59,7 +86,7 @@ This can be done in one of three ways:
 - load your environment with `source activate <environmentName>`;
 - begin your script with `#!/bin/bash`, which also executes your `.bashrc` file.
 
-## conda on Portal
+## Anaconda on Portal
 
 Special considerations apply if you want to use conda environments you have defined,
 for Python or R for example,

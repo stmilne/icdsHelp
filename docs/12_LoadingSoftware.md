@@ -1,10 +1,17 @@
-# Loading software
+# Software modules
 
 Collab provides many different applications in its software stack,
 which consists of two parts:
 
 - preloaded software, available immediately on login;
 - modular software, which must be loaded to be used.
+
+Not all software is preloaded,
+because conflicts inevitably arise 
+between different versions of "libraries"
+used by different software packages.
+Loading only certain software by modules
+is an attempt to manage this chaos.
 
 To find out if an application is available, use `which`:
 ```
@@ -38,26 +45,27 @@ What module files mainly do is add various directories
 to the paths Unix searches when looking for applications.
 To see what a given modulefile does, use `module show <moduleName>`.
 
-## Python packages
+!!! tip ""
+     Batch files must include `module load` commands
+     to load the modules they need.
+     Modules you have loaded when you submit a job with `squeue`
+     are not available to the job itself.
 
-Python is a widely-used programming language,
-preloaded on Collab,
-which is greatly extensible in its capabilities
-by loading additional packages.
+## Automatic loading
 
-To load Python packages, use pip:
-```
-pip install --user <package>
-```
-Python packages are loaded by default into `$HOME/.local`.
-If you load a large number of big Python packages,
-you may exceed the limited storage space in your home directory.
+On Unix machines, settings are stored in "hidden" text files, 
+(names start with `.`, so they don't show up with `ls`),
+in your home directory.
+Settings files are hidden to keep users from meddling with them.
+But one such file that you may want to alter is `~/.bashrc`.
 
-If this becomes a problem, the `.local` directory can be moved to `~/work`,
-and a link placed in your home directory.
-To make such a link, in your home directory execute the command
-```
-ln -s .local work/.local
-```
-which creates an alias (in Unix-speak, a "soft link") named `.local`
-that points to the directory you moved to `work`.
+When you log in, commands in `.bashrc` are automatically executed.
+So lines may be added to `.bashrc` to load modules
+for software you use frequently.
+
+!!! tip "" 
+     If your `.bashrc` file contains `module load` commands,
+     and your batch script begins with `#!/bin/bash`,
+     then your `.bashrc` file will execute when the batch job starts,
+     and the job will have access to the loaded modules.
+

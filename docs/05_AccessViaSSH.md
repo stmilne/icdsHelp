@@ -1,20 +1,22 @@
-# Access via ssh
+# Accessing Collab
 
 To use the cluster beyond the several applications provided by the Portal,
 logging on via a terminal is necessary.
-The Portal does provide a desktop environment,
-which includes a terminal application;
-however, the app takes several minutes to load,
-requires an estimate of how long you will be logged on,
-and ties up multiple cores on the interactive nodes.
+The Portal provide a desktop environment
+(the "RHEL 8 Interactive Desktop")
+which includes a terminal application,
+with a "look and feel" familiar to Windows users.
 
-An alternative is to logon to the cluster
+## Access via SSH
+
+Alternatively, you can access the cluster via [SSH][ssh]
 from a terminal application running on your laptop.
 On Windows, use puTTY, available [here](https://www.putty.org);
 on Mac, Terminal (installed by default), 
 or iTerm  (an improved version), available [here](https://iterm2.com).
+[ssh]: https://linux.die.net/man/1/ssh
 
-From the terminal, logon as
+From the terminal, log on to a submit node as
 ```
 ssh <user>@submit.hpc.psu.edu
 ```
@@ -35,27 +37,32 @@ you need an additional program on your laptop.
 On the Mac, this is XQuartz, available [here](https://www.xquartz.org).
 On the PC, you need VcXsrv, available [here](https://sourceforge.net/projects/vcxsrv/).
 
-To use cluster applications that open windows, logon with
+To use cluster applications that open windows, log on with
 option `-X` for "X forwarding":
 ```
 ssh -X <user>@submit.hpc.psu.edu
 ```
-When you logon to Collab from somewhere off campus,
+When you log on to Collab from somewhere off campus,
 X Window apps can sometimes be slow;  
 Portal works better in such circumstances.
 
-## User settings
+## Interactive jobs
 
-On Macs and PCs, user settings are accessed in application menus,
-System Settings panels, and the like.
-On Unix machines, settings are stored in text files, 
-typically hidden (named starting with `.`),
-somewhere in your home directory (`~` or `$HOME`).
+Sometimes, we want to run a compute-intensive job interactively;
+for example, a heavy MATLAB, Mathematica, or Gaussian calculation.  
 
-Settings files are hidden to keep users from meddling with them.
-But one important settings file that you should know about is `~/.bashrc`.
+Submit nodes are not designed for such work.
+If you try to run a number-crunching program on a submit node,
+it will a) run slow, and b) tie up the submit node for everyone else.
 
-When you log in, commands in `.bashrc` are automatically executed.
-Lines may be added to `.bashrc` to define frequently used aliases, 
-or load [modules](12_LoadingSoftware.md) so that software you use often
-is available automatically.
+Instead, from a submit node, start an "interactive batch" session:
+```
+salloc -N 1 -n 4 -A <alloc> -t 1:00:00
+```
+Option `-N` requests the number of nodes,
+`-n` the number of cores per node, and `-t` the total time;
+`-A <alloc>` specifies your allocation 
+(`-A open` for the open queue).
+
+Once `salloc` starts, you can run compute-intensive jobs 
+interactively on the resources you requested.

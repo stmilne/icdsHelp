@@ -7,13 +7,26 @@ To work on Unix, you need a good text editor.  There are several options.
 `gedit` is a modern windows-style text editor,
 with cursor / mouse / cut-and-paste / menus,
 reasonably intuitive for Windows and Mac users.
+It is available from the Portal Interactive Desktop
+(under Applications/Accessories/Text Editor),
+or via `ssh -X` (SSH with X Windows enabled).
 
-`vi` is beloved by old-school users (or those who appreciate old-school wisdom).
-It is "visual" in that you can see the contents of the file.
-However, you move around not with cursor and mouse, but by key commands.
+Other popular editors on Linux include [`emacs`][emacs]
+(under Applications/Accessories/emacs, or via `ssh -X`)
+and [`nano`][nano] (from the command line, via `ssh -X`).
+[emacs]: https://www.gnu.org/software/emacs/
+[nano]: https://www.nano-editor.org
+
+For more involved text editing of coding projects,
+a popular choice is [Visual Studio Code Server][vscode]
+(available as "VS Code Server" from the Portal main page).
+[vscode]: https://code.visualstudio.com/docs/remote/vscode-server
+
+Finally, `vi` is beloved by old-school users.
+In `vi`, you navigate the file not with cursor and mouse, but by key commands.
 `vi` offers powerful search-and-replace functions,
 and rapid navigation within the file.
-Learning `vi` is like learning to touch-type -- 
+Learning `vi` is like touch-typing -- 
 difficult at first, but remarkably fast.  
 
 Tutorials for `vi` are available [here][vi1], [here][vi2], and [here][vi3].

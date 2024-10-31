@@ -22,7 +22,7 @@ To make such a link, in your home directory execute the command
 ```
 ln -s .local work/.local
 ```
-which creates an alias (in Unix-speak, a "soft link") named `.local`
+which creates an alias (in Unix-speak, a "symbolic link") named `.local`
 that points to the directory you moved to `work`.
 
 ## Anaconda

@@ -8,7 +8,7 @@ which consists of two parts:
 
 Not all software is preloaded,
 because conflicts inevitably arise 
-between different versions of "libraries"
+between different versions of libraries
 used by different software packages.
 Loading only certain software by modules
 is an attempt to manage this chaos.

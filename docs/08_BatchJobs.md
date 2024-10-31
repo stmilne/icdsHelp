@@ -22,11 +22,11 @@ here are the basic SLURM commands
 
 Jobs submitted to SLURM are in the form of a "batch script".
 A batch script is a shell script that executes commands,
-with a preamble of comments of the form `#SBATCH ...` specify:
+with a preamble of comments of the form `#SBATCH ...` that specify:
 
-- an *allocation* to charge for the job;
-- a *queue* (qos) to submit the job to;
-- a *partition* (type of nodes) to run on;
+- an **allocation** to charge for the job;
+- a **queue** (qos) to submit the job to;
+- a **partition** (type of nodes) to run on;
 - nodes, cores, memory, GPUs, and time;
 - and other job-related parameters.
 

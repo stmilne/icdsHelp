@@ -21,7 +21,7 @@ But if you prefer a more "graphical" user interface,
 two options exist.
 
 The [Thunar][thunar] graphical file manager is available
-From the Portal Interactive Destop
+from the Portal Interactive Destop
 ( menu item Applications/Accessories/Thunar File Manager)
 or an SSH -X terminal session (`thunar` at the command line).
 [thunar]: https://docs.xfce.org/xfce/thunar/start

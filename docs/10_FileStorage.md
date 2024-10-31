@@ -22,9 +22,9 @@ Try to avoid this.
 
 ## Quotas
 
-home, work, group, and scratch directories are subject to limits,
-of the total filespace and the total number of files.
-On Roar Collab, the limits are:
+home, work, group, and scratch directories are subject to limits
+on the total filespace and the total number of files.
+On Collab, the limits are:
 
 | Storage | Path | Space | Files | Backup | Purpose |
 | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -63,15 +63,15 @@ lists directory sizes in order from large to small
 ## File permissions
 
 If you are a PI, you have group space on Collab, located at
-`/storage/group/<PIuserID>/default`
+`/storage/group/<PIuserID>/default`,
 for which the default file permissions and ownership are
 ```
 drwxr-s-- 2 root <PIuserID>
 ```
 
 The `s` setting in the group permissions means 
-every file and folder created within group
-will by default have the same group read `r` permission.
+every file and folder created within the group folder
+will have the same group read `r` permission.
 However, files created elsewhere and moved into group 
 have the permissions they were created with.
 To change them, use [`chmod`][chmod]:

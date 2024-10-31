@@ -14,11 +14,11 @@ and list approximate transfer rates for large files.
 
 | Transfer | Method | Rate (MB/sec) |
 | ---- | ---- | ---- |
-| Collab &rarr OneDrive | Globus | 50 | 
-| OneDrive &rarr Collab | Globus | 10 |
-| Collab &harr laptop | Portal | 25 |
-| Collab &harr laptop |sftp | 15 |
-| OneDrive &harr laptop | web access |20 |
+| Collab &rarr; OneDrive | Globus | 50 | 
+| OneDrive &rarr; Collab | Globus | 10 |
+| Collab &harr; laptop | Portal | 25 |
+| Collab &harr; laptop |sftp | 15 |
+| OneDrive &harr; laptop | web access |20 |
 
 ## Portal
 
@@ -67,7 +67,7 @@ Likewise, within sftp you can navigate on the local machine
 with "local" versions of these commands, `lcd` and `lls`.
 
 !!! tip ""
-     "Visual" sftp clients for your laptop
+     "Graphical" sftp clients for your laptop
      can be used for file transfer to Collab, 
      as well as to OneDrive or other cloud storage providers.
      Two popular options for both OS X and Windows are
@@ -89,8 +89,8 @@ The endpoint for Collab is "PennState_ICDS_RC",
 and for Penn State OneDrive is "Penn State OACIOR OneDrive Collection 01".
 
 Globus is interactive, 
-but has the advantage that time-consuming file transfers 
-can be submitted as batch jobs, to be performed later.
+but time-consuming file transfers 
+can be submitted as batch jobs.
 
 ## rsync
 
@@ -111,8 +111,8 @@ tar -cf <tarfilename>.tar <filespec>
 ```
 creates (`-c`) a single .tar file (`-f`) (sometimes called a "tarball"),
 containing the entire contents of `<filespec>`.
-`tar -cvf` operates "verbosely", 
-listing every file added to the tarball.
+With option `-v` (as in `tar -cvf`), tar operates "verbosely", 
+listing every file added.
 
 To make a tarball of everything in the current directory:
 ```
@@ -123,9 +123,9 @@ To make a tarball of everything in `thisFolder`:
 tar -cf myTar.tar thisFolder/*
 ```
 
-tar with a `z` option
+tar with option `-z` (as in `tar -czf`)
 makes a "zipped" (compressed) tarball.
-Compressing text files often makes the resulting tarball much smaller;
+Compressing text files often makes the tarball much smaller;
 compressing binary or image files is usually pointless.
 
 To unpack a tarball (option `-x` for "extract"):

@@ -1,7 +1,8 @@
 # Transferring files
 
 Computational workflows often require files 
-on Roar Collab, OneDrive, or your laptop or desktop machine
+on Roar Collab, Roar archival storage, 
+OneDrive, or your laptop or desktop machine
 to be transferred -- copied from one place to another.
 
 Transfers to and from Roar Restricted follow a special protocol,
@@ -14,13 +15,25 @@ and list approximate transfer rates for large files.
 
 | Transfer | Method | Rate (MB/sec) |
 | ---- | ---- | ---- |
-| Collab &rarr; OneDrive | Globus | 50 | 
-| OneDrive &rarr; Collab | Globus | 10 |
-| Collab &harr; laptop | Portal | 25 |
-| Collab &harr; laptop |sftp | 15 |
+| Collab &harr; Archive | Globus | 50 |
+| Collab &rarr; OneDrive | Firefox or Globus | 50 | 
+| OneDrive &rarr; Collab | Firefox or Globus | 10 |
+| Collab &harr; laptop | Portal Files menu | 25 |
+| Collab &harr; laptop | Cyberduck or FileZilla | 15 |
 | OneDrive &harr; laptop | web access |20 |
 
-## Portal
+## Firefox
+
+The Firefox browser is available either 
+from the [Portal Interactive Desktop][portalID]
+or from an [SSH -X session][sshx]
+From Firefox, you can access OneDrive
+and other similar destinations,
+and perform file transfers.
+[portalID]: 06_AccessingCollab.md
+[sshx]: 06_AccessingCollab.md#access-via-ssh
+
+## Portal Files menu
 
 The Collab [Portal][portal] top menu under Files/Home
 opens a window that enables convenient file transfer 
@@ -47,15 +60,8 @@ if the remote machine requires it.
 
 sftp is an interactive program.
 Once logged on, you can copy files 
-from the local machine to the remote, with
-``` 
-put <filename> 
-```
-and from the remote machine to the local, with 
-```
-get <filename> 
-```
-where `<filename>` is the name of the file to be copied.
+from the local machine to the remote with `put <filename>`,
+and from the remote machine to the local with `get <filename>`.
 
 When sftp launches, your location on the local machine
 is the folder in which you launched sftp,
@@ -84,18 +90,17 @@ including our OneDrive accounts.
 To get started, go [here][globus].
 [globus]: https://docs.globus.org/how-to/get-started/
 
-Globus moves files between named "endpoints".
-The endpoint for Collab is "PennState_ICDS_RC",
-and for Penn State OneDrive is "Penn State OACIOR OneDrive Collection 01".
+Globus moves files between named "endpoints":
+
+| Filesystem | Endpoint |
+| ---- | ---- |
+| Collab | PennState_ICDS_RC |
+| Archive | PennState_ICDS_Archive | 
+| PSU OneDrive | "Penn State OACIOR OneDrive Collection 01" |
 
 Globus is interactive, 
 but time-consuming file transfers 
 can be submitted as batch jobs.
-
-## rsync
-
-[`rsync`][rsync] is ...
-[rsync]: https://linux.die.net/man/1/rsync
 
 ## Packing files
 
@@ -133,3 +138,48 @@ To unpack a tarball (option `-x` for "extract"):
 tar -xf myTar.gz 
 ```
 
+## rsync
+
+Sometimes, you want to copy a directory of files 
+from one place to another,
+and then later *update* the copy
+with any changes made to the originals,
+so that the copy reflects the current version.
+If the directory contains many files but only a few are changed,
+it would be nice to have a program that automatically updates
+only the changed files. [`rsync`][rsync] does this:
+[rsync]: https://linux.die.net/man/1/rsync
+```
+rsync <options> <source-path> <destination-path>
+```
+copies files from `<source-path>` to `<destination-path>`,
+*and deletes files if necessary*,
+to make the destination the same as the source.
+Later, if you change files on `<source-path>`,
+run rsync again to update files on `<destination-path>`.
+
+rsync has several important options:
+
+- `a` – "archive" mode; traverses directories recursively
+- `v` – "verbose"; reports which files are copied
+- `z` – "zips" (compresses) the files on transfer
+- `h` – "human readable" reporting
+
+The source and destination can be on the same filesystem,
+or they can be different machines entirely.
+From a Unix command line on your laptop 
+(running Linux or OS X),
+```
+rsync /work/newData abc123@submit.hpc.psu.edu:/storage/work/abc123/toAnalyze/
+```
+which will prompt for your password and MFA.
+
+Note that the *destination* pathnames end with a `/`;
+this signifies that the copied files will go into the folder `toAnalyze`.
+For more examples, visit [Tecmint][tecmint].
+[tecmint]: https://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
+
+!!! warning ""
+     With rsync, the source is the original, and the destination is the copy.
+     Don't reverse direction, or you will confuse rsync and yourself,
+     and wind up clobbering or deleting files.

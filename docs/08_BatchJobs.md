@@ -22,7 +22,8 @@ here are the basic SLURM commands
 
 Jobs submitted to SLURM are in the form of a "batch script".
 A batch script is a shell script that executes commands,
-with a preamble of comments of the form `#SBATCH ...` that specify:
+with a preamble of comments
+which are SLURM directives `#SBATCH ...` to specify:
 
 - an **allocation** to charge for the job;
 - a **queue** (qos) to submit the job to;
@@ -43,16 +44,18 @@ An example is:
 #SBATCH --time=4:00:00
 #SBATCH --job-name=<name>
 
+# as usual, cd to where submitted
 cd $SLURM_SUBMIT_DIR
 
-module load gromacs-2019.6
+module load gromacs-2019.6  # need this module
 
 SYSTEM=$SLURM_SUBMIT_DIR/System
 gmx grompp -f $SYSTEM/nvt.mdp -c $SYSTEM/min.gro -p $SYSTEM/testJob.top -o nvt.tpr 
 gmx mdrun -nt 8 -nb cpu -deffnm nvt
 ```
 
-Everything after the last `#SBATCH` are commands to be executed.
+Everything after the last `#SBATCH` are commands to be executed;
+lines with `#` other than `#SBATCH` are ordinary comments.
 Most scripts start with `cd $SLURM_SUBMIT_DIR`,
 which is the directory from which the job was submitted.
 
@@ -105,6 +108,20 @@ are useful for this purpose.  For example,
 #SBATCH -eo = %u_%x.out
 ```
 writes both standard output and error to `<username>_<jobname>.out`.
+
+## Resource usage
+
+The SLURM command [`sacct`][sacct]
+reports the resources used by a completed batch job,
+which helps users learn what resources to request next time.
+sacct takes formatting options to control what it prints:
+[sacct]: https://slurm.schedmd.com/sacct.html
+
+```
+sacct -j $SLURM_JOB_ID --format=JobID,JobName,MaxRSS,Elapsed,TotalCPU,State
+```
+
+`sacct --helpformat` lists all the options.
 
 ## Timing jobs[](#timing-jobs)
 

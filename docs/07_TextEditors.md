@@ -17,9 +17,12 @@ and [`nano`][nano] (from the command line, via `ssh -X`).
 [emacs]: https://www.gnu.org/software/emacs/
 [nano]: https://www.nano-editor.org
 
-For more involved text editing of coding projects,
+For coding projects,
 a popular choice is [Visual Studio Code Server][vscode]
 (available as "VS Code Server" from the Portal main page).
+Not just an editor, VSCode is an Integrated Development Environment,
+that can check for errors as you type,
+run Python code interactively, has a debugger, and so on.
 [vscode]: https://code.visualstudio.com/docs/remote/vscode-server
 
 Finally, `vi` is beloved by old-school users.

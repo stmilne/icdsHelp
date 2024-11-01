@@ -123,10 +123,6 @@ To make a tarball of everything in the current directory:
 ```
 tar -cf myTar.tar *
 ```
-To make a tarball of everything in `thisFolder`:
-```
-tar -cf myTar.tar thisFolder/*
-```
 
 tar with option `-z` (as in `tar -czf`)
 makes a "zipped" (compressed) tarball.

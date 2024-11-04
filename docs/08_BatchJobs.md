@@ -18,6 +18,18 @@ here are the basic SLURM commands
 | `squeue -u <userid>` | check on jobs submitted by `<userid>` | `qstat -u <userid>` |
 | `scancel <jobID>` | cancel the job | `qdel <jobID>` |
 
+When you execute `sbatch myJob.sh`, SLURM responds with something like
+```
+Submitted batch job 25789352
+```
+To check on your jobs, execute `squeue -u <userID>`; SLURM responds with something like
+```
+JOBID		PARTITION	NAME		USER	ST	TIME	NODES	NODELIST(REASON)
+25789352	open 		myJob.sh	abc123	R	1:18:31	1		p-sc-2008
+```
+Here ST = status:  PD = pending, R = running, C = completed.  
+To cancel the job, execute `scancel 25789352`.
+
 ## Batch scripts
 
 Jobs submitted to SLURM are in the form of a "batch script".
@@ -61,12 +73,11 @@ which is the directory from which the job was submitted.
 
 Use `module load` just as you would interactively
 to load any modules the batch script needs.
-
 The first line `#!/bin/bash` executes your `.bashrc` file,
 and thus performs any initializations it contains
 (most importantly, loading modules).
 
-For more examples of common use cases,
+For examples of common resource requests,
 see [Batch examples](09_BatchExamples.md).
 
 **The hardware you reserve by choosing a partition,
@@ -146,7 +157,6 @@ date
 ```
 Your batch standard output file will then contain two "timestamps",
 from which you can determine the running time.
-
 To time a single command in a batch file, use [`time`][time]:
 [time]: https://www.man7.org/linux/man-pages/man1/time.1.html
 ```

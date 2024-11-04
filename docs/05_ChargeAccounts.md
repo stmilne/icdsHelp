@@ -13,6 +13,14 @@ One CU equals one core-month on a basic node.
 CUs from an allocation can be spent on any type of node,
 so that you can use whatever hardware is needed for a given job.
 
+To sign up for a charge account, use [iLab][iLab].
+After you fill out the web form,
+including a funding source from SIMBA,
+ICDS staff will confirm the account by email.
+Once the account is active,
+you can add CUs or authorized users via iLab. 
+[iLab]: https://psu.corefacilities.org/landing/328
+
 ## Prices
 
 The prices of different nodes (basic, standard, hi-memory, GPU)
@@ -37,4 +45,4 @@ The "5-year node cost" is the total cost at these rates
 of five years on a single node,
 which can be compared to the purchase price of a node.
 
-To sign up for an allocation, xxx
+

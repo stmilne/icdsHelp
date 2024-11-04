@@ -21,8 +21,8 @@ For coding projects,
 a popular choice is [Visual Studio Code Server][vscode]
 (available as "VS Code Server" from the Portal main page).
 Not just an editor, VSCode is an Integrated Development Environment,
-that can check for errors as you type,
-run Python code interactively, has a debugger, and so on.
+that checks for errors as you type,
+runs Python code interactively, has a debugger, and so on.
 [vscode]: https://code.visualstudio.com/docs/remote/vscode-server
 
 Finally, `vi` is beloved by old-school users.

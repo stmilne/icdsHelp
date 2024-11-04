@@ -26,7 +26,7 @@ and list approximate transfer rates for large files.
 
 The Firefox browser is available either 
 from the [Portal Interactive Desktop][portalID]
-or from an [SSH -X session][sshx]
+or from an [SSH -X session][sshx].
 From Firefox, you can access OneDrive
 and other similar destinations,
 and perform file transfers.
@@ -67,7 +67,7 @@ When sftp launches, your location on the local machine
 is the folder in which you launched sftp,
 and your location on the remote machine is your home directory.
 To control where on the remote machine files go to and come from,
-you can navigate on the remote machine in sftp with `cd`
+within sftp you can navigate on the remote machine with `cd`
 and list files with `ls`. 
 Likewise, within sftp you can navigate on the local machine
 with "local" versions of these commands, `lcd` and `lls`.

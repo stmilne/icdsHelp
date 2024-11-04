@@ -23,9 +23,9 @@ Try to avoid this.
 ## Archive storage
 
 To store infrequently-used files, low-cost archive storage can be purchased. 
-The archive is only accessible via the [Globus][globus] web interface,
+The Collab Archive is only accessible via the [Globus][globus] web interface,
 so access is not quick or convenient.
-If you store directories with many files, 
+If you store a directory that contains many files, 
 you should pack the directory into a single file with `tar`
 (see [Packing files](12_TransferringFiles.md#packing-files))
 before transferring.
@@ -33,8 +33,8 @@ before transferring.
 
 ## Quotas
 
-home, work, group, and scratch directories are subject to limits
-on the total filespace and the total number of files.
+home, work, group, and scratch directories are subject to limits,
+both on the total filespace and on the total number of files.
 On Collab, the limits are:
 
 | Storage | Path | Space | Files | Backup | Purpose |

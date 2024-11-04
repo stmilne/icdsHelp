@@ -83,7 +83,7 @@ add a line to your batch script:
 ```
 #SBATCH --constraint=<feature>
 ```
-where <feature> is one of the features listed by sinfo
+where `<feature>` is one of the features listed by sinfo
 (or multiple features, separated by commas).
 
 To request nodes with a given feature for an interactive job,  

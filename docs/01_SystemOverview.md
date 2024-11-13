@@ -2,7 +2,7 @@
 
 Compute clusters like Roar serve many purposes:
 
-- **number crunching**, much bigger faster than a laptop
+- **number crunching**, much bigger and faster than a laptop
 - **automated compute jobs**, submitted and performed later
 - **interactive computing**, on the equivalent of a powerful workstation
 - **large-scale storage** and access of data files
